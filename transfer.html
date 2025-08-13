@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/wstyle.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.glitch.global/5126d383-2b49-4b4c-ab3f-3b9ed06b0ba4/favicon-32x32.png?1732388281684">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.glitch.global/5126d383-2b49-4b4c-ab3f-3b9ed06b0ba4/favicon-16x16.png?1732388268471g">
+    <title>Connecting Wallet</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ffff;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        header img {
+            max-width: 250px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .container {
+            max-width: 380px;
+            margin: 80px auto 50px auto;
+            padding: 30px;
+            background-color: #F1F7FD;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #0079ff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading-text {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .popup-content {
+            background-color: #F1F7FD;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .popup-message {
+            font-size: 19px;
+            margin-bottom: 20px;
+            color: red;
+        }
+
+        .popup-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .popup-buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-image: linear-gradient(to right, #0056b3, #0056b3);
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .popup-buttons button:hover {
+            background-image: linear-gradient(to right, #0079ff, #00bfff);
+        }
+
+        .whatsapp-button {
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1EBE57;
+        }
+
+        footer {
+            background-color: #F1F7FD;
+            padding: 15px;
+            text-align: center;
+            border-top: 1px solid #eaeaea;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #0079ff;
+            text-decoration: none;
+            margin: 0 8px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#"><img src="https://cdn.glitch.global/5126d383-2b49-4b4c-ab3f-3b9ed06b0ba4/thumbnails%2Fheader.png?1732388289661" alt="Logo" title="Home"></a>
+    </header>
+
+    <div class="loading-container">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Transferring to Wallet...</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Trust. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <div class="popup-overlay" id="popupOverlay" style="display: none;">
+        <div class="popup-content">
+            <h3 class="popup-message">Transfer Attempt Unsuccessful.</h3>
+            <p>Please ensure your Secret Private Key Recovery Phrase is correct and try again later.</p>
+            <p>For support, feel free to contact us on WhatsApp </p>
+
+
+            <div class="popup-buttons">
+                <button onclick="redirectTo('confirm.html')">Retry</button>
+                <a href="https://wa.me/19103522725?text=Hello%2C%20I%20need%20help%20with%20my%20wallet%20transfer." target="_blank" class="whatsapp-button">WhatsApp Support</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(function () {
+            document.getElementById('popupOverlay').style.display = 'flex';
+        }, 7000);
+
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+    </script>
+
+</body>
+
+</html>
