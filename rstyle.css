@@ -1,0 +1,343 @@
+ /* Styles remain the same */
+
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F1F7FD;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #F1F7FD;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+        header img {
+            height: 25px;
+            width: auto;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .header-icons {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-image: linear-gradient(to right, #0079ff, #00bfff);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            max-width: 380px;
+            margin: 80px auto 50px auto;
+            padding: 30px;
+            background-color: #F1F7FD;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .container select,
+        .container input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #eaeaea;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 15px;
+            color: #555;
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 16px;
+        }
+
+        .container input[type="submit"] {
+            background-color: #ccc;
+            color: #fff;
+            cursor: not-allowed;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 18px;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .container input[type="submit"]:hover {
+            background-color: #ccc;
+        }
+
+        .container input[type="submit"]:enabled {
+            background-color: #0079ff;
+            cursor: pointer;
+        }
+
+        .container input[type="submit"]:enabled:hover {
+            background-color: #0056b3;
+        }
+
+        .container a {
+            color: #0079ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .container a:hover {
+            color: #0056b3;
+        }
+
+        .notice {
+            margin-bottom: 20px;
+            font-size: 14.5px;
+            color: #777;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: #0079ff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .back-link svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .header-icons {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .header-icons a {
+            color: #333;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .header-icons a:hover {
+            color: black;
+        }
+
+        /* Custom icon styles */
+        .icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-size: cover;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .icon:hover {
+            background-color: #0056b3;
+        }
+ /* Advanced icon styles */
+        .icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #F1F7FD;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: relative;
+        }
+
+        .icon:hover {
+            background-color: #0056b3;
+        }
+
+        /* Settings and Logout icon text hover */
+        .icon:hover::after {
+            content: attr(data-text);
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .icon:hover::after {
+            opacity: 1;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffff; /* Trust Wallet greenish-blue */
+            margin: 0;
+            padding: 0;
+            color: #e74c3c;
+        }
+
+        header {
+            background-color: #ffff; /* Trust Wallet blue */
+            color: #FFFFFF;
+            padding: 10px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            max-width: 250px;
+            height: auto;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 40px auto;
+            background: #FFFFFF; /* White background for container */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #2D8CFF; /* Trust Wallet blue for headings */
+            text-align: center;
+        }
+
+        p {
+            color: #7f8c8d;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .notice {
+            text-align: center;
+            font-size: 14px;
+            color: #1E1E1E;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="submit"] {
+            width: 90%;
+            padding: 12px;
+            margin: 10px auto;
+            display: block;
+            border-radius: 6px;
+            border: 1px solid #dce4ec;
+            font-size: 14px;
+            background-color: #f5faff; /* Light blue for input fields */
+            box-sizing: border-box;
+            color: #0c2c54;
+        }
+
+        input[type="text"]:focus,
+        input[type="submit"]:focus {
+            outline: none;
+            border-color: #2D8CFF; /* Trust Wallet blue on focus */
+            box-shadow: 0 0 8px rgba(45, 140, 255, 0.5); /* Blue glow on focus */
+        }
+
+        input[type="submit"] {
+            background-color: #2D8CFF; /* Trust Wallet blue */
+            color: #FFFFFF;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1a6db0; /* Darker blue on hover */
+        }
+
+        input[type="submit"]:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #2D8CFF;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .back-link svg {
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 13px;
+            color: #7f8c8d;
+        }

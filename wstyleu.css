@@ -1,0 +1,159 @@
+  /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: #FFFF;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffdd57;
+        }
+
+        /* Main Container */
+        .panel-container {
+            background: white;
+            width: 100%;
+            max-width: 450px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .panel-header {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        /* Balance Section */
+        .balance-box {
+            background: #eef3f9;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .balance-box:hover {
+            transform: translateY(-3px);
+        }
+
+        .balance-label {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .balance-value {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: black;
+            margin-top: 5px;
+        }
+
+        .btc-rate {
+            font-size: 1.1rem;
+            color: #ff5733;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* Withdraw Button */
+        .withdraw-btn {
+            background: #007BFF;
+            color: white;
+            font-size: 1.2rem;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-weight: bold;
+            box-shadow: 0px 5px 10px rgba(0, 123, 255, 0.3);
+        }
+
+        .withdraw-btn:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            background: #FFF;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            color: black;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .panel-container {
+                padding: 25px;
+            }
+        }
